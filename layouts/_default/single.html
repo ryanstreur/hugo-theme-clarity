@@ -1,0 +1,19 @@
+{{ define "main" }}
+<em>{{ or .Params.author }}</em>
+<main>
+    <article>
+        {{ .Content }}
+    </article>
+    {{ if .Params.Tags }}
+        <section>
+            Tags:&nbsp;
+            {{ range .Params.Tags }}
+            <a href="/tags/{{ . }}" class="tag-link">
+                {{ . }}
+            </a>
+            <span>&nbsp;</span>
+            {{ end }}
+        </section>
+    {{ end }}
+</main>
+{{ end }}

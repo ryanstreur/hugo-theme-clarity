@@ -1,0 +1,70 @@
+body {
+    font-family: Baskerville;
+    font-size: 16pt;
+    background-color: black;
+    color: lightgray;
+}
+
+h1 {
+    text-align: center;
+}
+
+article>h1 {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 400;
+}
+
+main {
+    margin: auto;
+    max-width: 800px;
+}
+
+a {
+    color: white;
+}
+
+.page-list {
+    list-style: none;
+    padding: 0;
+}
+
+.page-list-item {
+    display: flex;
+}
+
+.page-list-date,
+.page-link {
+    color: white;
+    padding: 0.5em;
+}
+
+.menu {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu>li {
+    flex-grow: 1;
+}
+
+.menu>li>a {
+    color: white;
+    display: block;
+    text-align: center;
+    width: 100%;
+    border-right-width: 1px;
+    border-right-color: white;
+    border-right-style: solid;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.menu>li:last-child>a {
+    border-right: 0;
+}
+

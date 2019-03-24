@@ -1,0 +1,22 @@
+{{ define "main" }}
+<main>
+    {{ if .Content }}
+        <article>
+            {{ .Content }}
+        </article>
+        <hr />
+    {{ end }}
+    <ul class="page-list">
+        {{ range .Pages }}
+        <li class="page-list-item">
+            <time class="page-list-date">
+                {{ .Date.Format "2006.01.02" }}
+            </time>
+            <a class="page-link" href="{{.Permalink}}">
+                {{.Title}}
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+</main>
+{{ end }}
