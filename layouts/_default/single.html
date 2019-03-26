@@ -1,6 +1,12 @@
 {{ define "main" }}
 <em>{{ or .Params.author }}</em>
 <main>
+    {{ if .Params.toc }}
+        <aside>
+            {{ .TableOfContents }}
+        </aside>
+        <hr />
+    {{ end }}
     <article>
         {{ .Content }}
     </article>

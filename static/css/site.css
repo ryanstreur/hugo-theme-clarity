@@ -26,6 +26,10 @@ a {
     color: white;
 }
 
+#TableOfContents {
+    margin-right: 1em;
+}
+
 .page-list {
     list-style: none;
     padding: 0;
