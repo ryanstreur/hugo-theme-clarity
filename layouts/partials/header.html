@@ -1,9 +1,9 @@
 <nav></nav>
 <header>
-    <h1>
-        {{ .Title }}
-    </h1>
-    <time>
-        {{ .Date.Format "01.02.2006 - Monday"}}
-    </time>
+  <h1>
+    {{ emojify .Title }}
+  </h1>
+  <time>
+    {{ .Date.Format "01.02.2006 - Monday"}}
+  </time>
 </header>

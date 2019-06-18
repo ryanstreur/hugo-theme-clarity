@@ -1,6 +1,6 @@
 {{ define "main" }}
 <em>{{ or .Params.author }}</em>
-<main>
+<main id="content">
     {{ if .Params.toc }}
         <aside>
             {{ .TableOfContents }}
