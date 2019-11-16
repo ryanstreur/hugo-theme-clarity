@@ -1,25 +1,39 @@
 {{ define "main" }}
-<em>{{ or .Params.author }}</em>
-<main id="content">
-    {{ if .Params.toc }}
-        <aside>
-            {{ .TableOfContents }}
-        </aside>
-        <hr />
-    {{ end }}
+<main>
+    {{- partial "header.html" . -}}
+    <em>{{ or .Params.author }}</em>
+    <time>{{ .Date.Format "01.02.2006 - Monday"}}</time>
     <article>
         {{ .Content }}
     </article>
+
     {{ if .Params.Tags }}
-        <section>
-            Tags:&nbsp;
-            {{ range .Params.Tags }}
-            <a href="/tags/{{ . }}" class="tag-link">
-                {{ . }}
-            </a>
-            <span>&nbsp;</span>
-            {{ end }}
-        </section>
+    <section>
+        Tags:&nbsp;
+        {{ range .Params.Tags }}
+        <a
+            href="/tags/{{ . }}"
+            class="tag-link"
+        >
+            {{ . }}
+        </a>
+        <span>&nbsp;</span>
+        {{ end }}
+    </section>
     {{ end }}
+
+    {{ with .Params.seeAlso }}
+    <section>
+        <h2>See Also</h2>
+        <ul>
+            {{ range . }}
+            <li>
+                <a href="{{ .href }}">{{ .text }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </section>
+    {{end}}
+    {{- partial "footer.html" . -}}
 </main>
 {{ end }}

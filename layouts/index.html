@@ -3,9 +3,9 @@
 {{- partial "head.html" . -}}
 
 <body>
-    {{- partial "sidebar.html" . -}}
-    {{- partial "header.html" . -}}
-    <main id="content">
+    {{- partial "menu.html" . -}}
+    <main>
+        {{- partial "header.html" . -}}
         {{ .Content }}
     </main>
     {{- partial "footer.html" . -}}
