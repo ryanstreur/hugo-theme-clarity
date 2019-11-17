@@ -3,6 +3,7 @@ body {
   color: lightgray;
   font-family: Baskerville;
   font-size: 18pt;
+  margin: 0;
 }
 
 article {
@@ -59,6 +60,11 @@ nav > ul {
 
 .nav-title {
   display: block;
+}
+
+nav,
+main {
+  padding: 0.5em;
 }
 
 .page-list {

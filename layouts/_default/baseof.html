@@ -7,7 +7,9 @@
     href="/"
     class="nav-title stick-to-top bg-color"
   >{{ .Site.Title }}</a>
-  {{- partial "menu.html" . -}}
+  <nav>
+    {{- partial "menu.html" . -}}
+  </nav>
   {{- partial "header.html" . -}}
   {{- block "main" . }}{{- end -}}
 </body>

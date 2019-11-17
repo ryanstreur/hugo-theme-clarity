@@ -1,38 +1,38 @@
-<nav class="bg-color">
-  <ul class="menu">
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-    {{ if .HasChildren }}
-    <li>
-      <details {{ if ($currentPage.HasMenuCurrent "main" .) }}open{{end}}>
-        <summary class="{{ if ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}">
-          <a href="{{ .URL }}">
-            {{ .Pre }}
-            <span>{{ .Name }}</span>
-          </a>
-        </summary>
+<ul class="menu bg-color">
+  {{ $currentPage := . }}
+  {{ range .Site.Menus.main }}
+  {{ $menuIsCurrent := or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)}}
+  {{ if .HasChildren }}
+  <li>
+    <details {{ if $menuIsCurrent }}open{{end}}>
+      <summary class="{{ if $menuIsCurrent }}active{{ end }}">
+        <a href="{{ .URL }}">
+          {{ .Pre }}
+          <span>{{ .Name }}</span>
+        </a>
+      </summary>
 
-        <ul class="sub-menu">
-          {{ range .Children }}
-          <li class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-            <a href="{{ .URL }}">{{ .Name }}</a>
-          </li>
-          {{ end }}
-        </ul>
+      <ul class="sub-menu">
+        {{ range .Children }}
+        {{ $childIsCurrent := or ($currentPage.HasMenuCurrent "main" .) ($currentPage.IsMenuCurrent "main" .)}}
+        <li class="{{ if $childIsCurrent }}active{{ end }}">
+          <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+      </ul>
 
-      </details>
-    </li>
+    </details>
+  </li>
 
-    {{ else }}
+  {{ else }}
 
-    <li>
-      <a href="{{ .URL }}">
-        {{ .Pre }}
-        <span>{{ .Name }}</span>
-      </a>
-    </li>
+  <li>
+    <a href="{{ .URL }}">
+      {{ .Pre }}
+      <span>{{ .Name }}</span>
+    </a>
+  </li>
 
-    {{ end }}
-    {{ end }}
-  </ul>
-</nav>
+  {{ end }}
+  {{ end }}
+</ul>
