@@ -1,5 +1,5 @@
 ---
 menu:
   main:
-    parent: post
+    parent: blog
 ---

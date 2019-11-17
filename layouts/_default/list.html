@@ -8,18 +8,18 @@
   <hr />
   {{ end }}
 
-  <ul class="page-list">
+  <ul class="page-list stack">
     {{ range .Pages }}
-    <li class="page-list-item">
-      <time class="page-list-date">
-        {{ .Date.Format "2006.01.02" }}
-      </time>
+    <li>
       <a
         class="page-link"
         href="{{.Permalink}}"
       >
         {{.Title}}
       </a>
+      <time class="page-list-date">
+        {{ .Date.Format "2006.01.02" }}
+      </time>
     </li>
     {{ end }}
   </ul>

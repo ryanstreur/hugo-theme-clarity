@@ -8,15 +8,9 @@ body {
   margin: 0;
 }
 
-main {
-  flex-basis: 65ch;
-  padding-left: 1em;
-}
-
 article {
   max-width: 70ch;
   line-height: 1.5;
-  padding-left: 1em;
 }
 
 h1,
@@ -34,13 +28,12 @@ a {
 
 nav {
   margin: 0;
+  flex-grow: 1;
 }
 
-header,
-nav > ul {
-  position: sticky;
-  top: 0;
-  padding-top: 2em;
+nav,
+main {
+  padding: 0.75em;
 }
 
 nav .active {
@@ -59,14 +52,8 @@ nav > ul {
   padding: 0;
 }
 
-.page-list-item {
-  display: flex;
-}
-
-.page-list-date,
-.page-link {
-  color: white;
-  padding: 0.5em;
+.page-list-date {
+  display: block;
 }
 
 #TableOfContents > ul {
@@ -79,4 +66,14 @@ nav > ul {
 
 .bg-color {
   background-color: black;
+}
+
+.stick-to-top {
+  position: sticky;
+  top: 0;
+}
+
+/* https://every-layout.dev/layouts/stack/ */
+.stack > * + * {
+  margin-top: 1.5rem;
 }

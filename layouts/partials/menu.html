@@ -1,6 +1,8 @@
 <nav class="bg-color">
     <ul class="menu">
-        <li><a href="/">{{ .Site.Title }}</a></li>
+        <li class="nav-title stick-to-top bg-color">
+            <a href="/">{{ .Site.Title }}</a>
+        </li>
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
         {{ if .HasChildren }}
