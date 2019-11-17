@@ -1,8 +1,13 @@
 {{ define "main" }}
 <main>
-    {{- partial "header.html" . -}}
     <em>{{ or .Params.author }}</em>
     <time>{{ .Date.Format "01.02.2006 - Monday"}}</time>
+    {{ if .Params.showLastMod }}
+    <section>
+        Last Modified:
+        <time>{{ .Lastmod.Format "01.02.2006 - Monday"}}</time>
+    </section>
+    {{ end }}
     <article>
         {{ .Content }}
     </article>

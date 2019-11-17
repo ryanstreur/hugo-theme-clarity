@@ -1,11 +1,8 @@
 body {
   background-color: black;
   color: lightgray;
-  display: flex;
-  flex-wrap: wrap;
   font-family: Baskerville;
   font-size: 18pt;
-  margin: 0;
 }
 
 article {
@@ -19,21 +16,34 @@ h3,
 h4,
 h5 {
   font-weight: 400;
-  margin-top: 0;
+  margin: 0;
 }
 
 a {
   color: white;
 }
 
+.bg-color {
+  background-color: black;
+}
+
+.stick-to-top {
+  position: sticky;
+  top: 0;
+}
+
+header.stick-to-top {
+  top: 1.1em;
+}
+
+/* https://every-layout.dev/layouts/stack/ */
+.stack > * + * {
+  margin-top: 1.5rem;
+}
+
 nav {
   margin: 0;
   flex-grow: 1;
-}
-
-nav,
-main {
-  padding: 0.75em;
 }
 
 nav .active {
@@ -45,6 +55,10 @@ nav > ul {
   margin: 0;
   padding-left: 0;
   padding-right: 0;
+}
+
+.nav-title {
+  display: block;
 }
 
 .page-list {
@@ -62,18 +76,4 @@ nav > ul {
 
 #TableOfContents ul {
   list-style: none;
-}
-
-.bg-color {
-  background-color: black;
-}
-
-.stick-to-top {
-  position: sticky;
-  top: 0;
-}
-
-/* https://every-layout.dev/layouts/stack/ */
-.stack > * + * {
-  margin-top: 1.5rem;
 }

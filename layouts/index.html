@@ -3,11 +3,15 @@
 {{- partial "head.html" . -}}
 
 <body>
-    {{- partial "menu.html" . -}}
+    <a
+        href="/"
+        class="nav-title stick-to-top bg-color"
+    >{{ .Site.Title }}</a>
+    {{- partial "header.html" . -}}
     <main>
-        {{- partial "header.html" . -}}
         {{ .Content }}
     </main>
+    {{- partial "menu.html" . -}}
     {{- partial "footer.html" . -}}
 </body>
 
