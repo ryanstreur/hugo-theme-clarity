@@ -4,6 +4,7 @@ body {
   font-family: Baskerville;
   font-size: 18pt;
   margin: 0;
+  display: grid;
 }
 
 article {
@@ -34,7 +35,7 @@ a {
 }
 
 header.stick-to-top {
-  top: 1.1em;
+  top: 2.2em;
 }
 
 /* https://every-layout.dev/layouts/stack/ */
@@ -44,7 +45,6 @@ header.stick-to-top {
 
 nav {
   margin: 0;
-  flex-grow: 1;
 }
 
 nav .active {

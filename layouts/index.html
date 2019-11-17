@@ -3,16 +3,17 @@
 {{- partial "head.html" . -}}
 
 <body>
-    <a
-        href="/"
-        class="nav-title stick-to-top bg-color"
-    >{{ .Site.Title }}</a>
-    {{- partial "header.html" . -}}
-    <main>
-        {{ .Content }}
-    </main>
+  <h1 class="nav-title nav-title-outer stick-to-top bg-color">
+    <a href="/">{{ .Site.Title }}</a>
+  </h1>
+  {{- partial "header.html" . -}}
+  <main>
+    {{ .Content }}
+  </main>
+  <nav>
     {{- partial "menu.html" . -}}
-    {{- partial "footer.html" . -}}
+  </nav>
+  {{- partial "footer.html" . -}}
 </body>
 
 </html>

@@ -3,10 +3,9 @@
 {{- partial "head.html" . -}}
 
 <body>
-  <a
-    href="/"
-    class="nav-title stick-to-top bg-color"
-  >{{ .Site.Title }}</a>
+  <h1 class="nav-title nav-title-outer stick-to-top bg-color">
+    <a href="/">{{ .Site.Title }}</a>
+  </h1>
   <nav>
     {{- partial "menu.html" . -}}
   </nav>
