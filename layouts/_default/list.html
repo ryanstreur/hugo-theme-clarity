@@ -4,16 +4,15 @@
   <article>
     {{ . }}
   </article>
-  <hr />
   {{ end }}
 
+  {{ if .Pages }}
+  <hr />
+  {{end}}
   <ul class="page-list stack">
     {{ range .Pages }}
     <li>
-      <a
-        class="page-link"
-        href="{{.Permalink}}"
-      >
+      <a class="page-link" href="{{.Permalink}}">
         {{.Title}}
       </a>
       <time class="page-list-date">

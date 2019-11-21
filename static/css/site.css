@@ -83,3 +83,13 @@ main {
 #TableOfContents ul {
   list-style: none;
 }
+
+.print-only {
+  display: none;
+}
+
+th {
+  font-weight: normal;
+  text-align: left;
+  border-bottom: 1px solid black;
+}
