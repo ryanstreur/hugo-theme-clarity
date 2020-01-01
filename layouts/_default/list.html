@@ -10,7 +10,7 @@
   <hr />
   {{end}}
   <ul class="page-list stack">
-    {{ range sort .Pages "Lastmod" "Date" }}
+    {{ range sort .Pages "Lastmod" "Date" "desc" }}
     <li>
       <a class="page-link" href="{{.Permalink}}">
         {{.Title}}
